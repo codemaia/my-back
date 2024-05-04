@@ -49,11 +49,18 @@ public class BookResource {
 		return ResponseEntity.created(uri).build(); // created return void with cod. http 201 
 	}
 	
-	
 	@RequestMapping(value="/{id}" ,method=RequestMethod.DELETE)
 	public ResponseEntity<Void> delete(@PathVariable String id) {
 		service.delete(id);		
 		return ResponseEntity.noContent().build(); // return cod. http 204
+	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+	public ResponseEntity<Void> update(@RequestBody BookDTO objDto, @PathVariable String id ) {
+		Book obj = service.fromDTO(objDto);
+		obj.setId(id);
+		obj = service.update(obj);
+		return ResponseEntity.noContent().build(); // return cod. http 204 
 	}
 	
 }

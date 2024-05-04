@@ -34,9 +34,21 @@ public class BookService {
 	public void delete(String id) {
 		findById(id);
 		repo.deleteById(id);
+	}
+	
+	public Book update(Book obj) {
+		Book newBook = findById(obj.getId());
+		updateData(newBook, obj);
+		return repo.save(newBook);
 		
 	}
 	
+	private void updateData(Book newBook, Book obj) {
+		newBook.setName(obj.getName());
+		newBook.setAuthor(obj.getAuthor());
+		newBook.setEditora(obj.getEditora());
+	}
+
 	public Book fromDTO(BookDTO objDto) {
 		return new Book(objDto.getId(), objDto.getName(), objDto.getAuthor(), objDto.getEditora());
 	}
