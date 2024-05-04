@@ -10,7 +10,7 @@ public class BookDTO implements Serializable{
 	private String id;
 	private String name;
 	private String author;
-	//private String editora;
+	private String editora;
 	
 	public BookDTO() {
 		
@@ -20,7 +20,7 @@ public class BookDTO implements Serializable{
 		id = obj.getId();
 		name = obj.getName();
 		author = obj.getAuthor();
-		//editora = obj.getEditora();		
+		editora = obj.getEditora();		
 	}
 
 	public String getId() {
@@ -47,13 +47,13 @@ public class BookDTO implements Serializable{
 		this.author = author;
 	}
 
-	/* public String getEditora() {
+	 public String getEditora() {
 		return editora;
 	}
 
 	public void setEditora(String editora) {
 		this.editora = editora;
-	} */
+	} 
 	
 	
 	
