@@ -2,6 +2,10 @@ package com.codemaia.workmongo.dto;
 
 import java.io.Serializable;
 
+/*
+ * DTO Classe "personalizada" para persistir no banco
+ */
+
 import com.codemaia.workmongo.domain.Book;
 
 public class BookDTO implements Serializable{

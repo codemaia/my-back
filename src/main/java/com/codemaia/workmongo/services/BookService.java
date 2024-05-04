@@ -11,6 +11,10 @@ import com.codemaia.workmongo.dto.BookDTO;
 import com.codemaia.workmongo.repository.BookRepository;
 import com.codemaia.workmongo.services.exception.ObjectNotFoundException;
 
+/*
+ * Service - os métodos que realmente fazem o CRUD (create, read, update delete)
+ */
+
 @Service
 public class BookService {
 	

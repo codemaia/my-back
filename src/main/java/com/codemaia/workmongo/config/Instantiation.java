@@ -9,6 +9,11 @@ import org.springframework.context.annotation.Configuration;
 import com.codemaia.workmongo.domain.Book;
 import com.codemaia.workmongo.repository.BookRepository;
 
+
+/*
+ * Carga inicial do banco de dados
+ */
+
 @Configuration
 public class Instantiation implements CommandLineRunner{
 

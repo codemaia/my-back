@@ -17,6 +17,11 @@ import com.codemaia.workmongo.domain.Book;
 import com.codemaia.workmongo.dto.BookDTO;
 import com.codemaia.workmongo.services.BookService;
 
+/*
+ * Resources onde ficam os endpoints
+ * 
+ */
+
 @RestController
 @RequestMapping(value="/books")
 public class BookResource {
