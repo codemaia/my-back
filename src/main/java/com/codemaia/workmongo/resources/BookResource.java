@@ -49,4 +49,11 @@ public class BookResource {
 		return ResponseEntity.created(uri).build(); // created return void with cod. http 201 
 	}
 	
+	
+	@RequestMapping(value="/{id}" ,method=RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable String id) {
+		service.delete(id);		
+		return ResponseEntity.noContent().build(); // return cod. http 204
+	}
+	
 }

@@ -31,8 +31,14 @@ public class BookService {
 		return repo.insert(obj);
 	}
 	
+	public void delete(String id) {
+		findById(id);
+		repo.deleteById(id);
+		
+	}
+	
 	public Book fromDTO(BookDTO objDto) {
 		return new Book(objDto.getId(), objDto.getName(), objDto.getAuthor(), objDto.getEditora());
 	}
-	
+		
 }
