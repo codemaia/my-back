@@ -1,0 +1,26 @@
+services:
+ mongodb:
+  image: mongo
+  container_name: mongodb
+  ports:
+   - "27017:27017"
+  volumes:
+   - mongo-data:/data/db
+   
+   
+ app:
+  image: openjdk:17-jdk-alpine
+  container_name: my-backend-app
+  ports:
+   - "8080:8080"
+  environment:
+   SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/work_mongo
+  depends_on:
+   - mongodb
+  volumes:
+   - .:/app
+  working_dir: /app
+  command: ./mvnw spring-boot:run -e
+ 
+volumes:
+ mongo-data:
